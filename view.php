@@ -103,8 +103,7 @@
                 <article>
                    <p>Our Signature excursions are curated unique, authentic, once in a lifetime travel experiences.</p>
                     <p>Based in the most revered of Africa’s safaris destinations, in Kenya, WAKUU SAFARIS boasts of providing an unrivalled full spectrum of leisure travel services, providing you with a complete end to end booking. </p>
-                  </article><br>
-                  <button class="btn btn-default" onclick="window.location.href='#services'" role="button" style="background-color: #800000; color: #fff;font-family: 'Aileron'; font-style: italic;font-weight:bold;">Inquire Services &raquo;</button>
+                  </article>
              </div>
              <div class="column-image">
                 <div id="image-div">
@@ -370,6 +369,7 @@
      <?php }?>
    </article>
 </div>
+
 
 
 
