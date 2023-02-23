@@ -379,7 +379,6 @@
 
 
 
-
 <?php }else{}?>
 <!-- FOOTER -->
 <?php require_once 'includes/footer.php'; ?>
