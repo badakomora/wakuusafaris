@@ -933,79 +933,90 @@
 
 
 
+<br>
+    <div class="container-fluid">
 
-    <div class="row">
-    <section style="padding: 20px;">
-      <style>
-        td,
-        th {
-          border: 2px solid black;
-          padding: 10px;
-        }
+            <section style="padding: 20px;">
+                <style>
+                td,
+                th {
+                border: 2px solid black;
+                padding: 10px;
+                }
 
-        
+                
 
-        table {
-          display: block;
-          max-width: -moz-fit-content;
-          max-width: fit-content;
-          margin: 0 auto;
-          overflow-x: scroll;
-          white-space: nowrap;
-        }
-      </style>
-      
-        <?php
-        include 'includes/dbconfiq.php';
-        $query = mysqli_query($con, "SELECT * FROM tbl_tables WHERE sid ='".$_GET['sid']."'");
-        if(mysqli_num_rows($query) >= 1){?>
-        <table>
-        <thead>
-          <tr style="background-color: #800000; color:white;">
-            <th>Accommodation</th>
-            <th>Meal Plan</th>
-            <th>Dec-Feb</th>
-            <th>Mar-May</th>
-            <th>Jun-Aug</th>
-            <th>Sep-Nov</th>
-            <th>Set-up and Location</th>
-          </tr>
-        </thead>
-        <tbody>
-        <?php
+                table {
+                display: block;
+                max-width: -moz-fit-content;
+                max-width: fit-content;
+                margin: 0 auto;
+                overflow-x: scroll;
+                white-space: nowrap;
+                }
+            </style>
+            
+            <?php
+                include 'includes/dbconfiq.php';
+                $query = mysqli_query($con, "SELECT * FROM tbl_tables WHERE sid ='".$_GET['sid']."'");
+                if(mysqli_num_rows($query) >= 1){?>
+
+                <center>
+                    <h1 style="color:#800000 ;" class="text-center">Safari Budget</h1>
+                    <div style="height:5px;width:20%; box-shadow: 5px 5px 10px 0px rgba(0,0,0,.2);"></div>
+                </center><br><br>
+                
+            <table>
+                <thead>
+                <tr style="background-color: #800000; color:white;">
+                    <th>Accommodation</th>
+                    <th>Meal Plan</th>
+                    <th>Dec-Feb</th>
+                    <th>Mar-May</th>
+                    <th>Jun-Aug</th>
+                    <th>Sep-Nov</th>
+                    <th>Set-up and Location</th>
+                </tr>
+                </thead>
+                <tbody>
+                <?php
+                    include 'includes/dbconfiq.php';
+                    $query = mysqli_query($con, "SELECT * FROM tbl_tables WHERE sid ='".$_GET['sid']."'");
+                    while($rows = mysqli_fetch_array($query)){
+                    ?>
+                <tr>
+                    <td><?php echo $rows['accom'];?></td>
+                    <td><?php echo $rows['mealplan1'];?> <br> <?php echo $rows['mealplan2'];?> </td>
+                    <td><?php echo $rows['DecFeb1'];?> <br> <?php echo $rows['DecFeb2'];?> </td>
+                    <td><?php echo $rows['MarMay1'];?> <br> <?php echo $rows['MarMay2'];?> </td>
+                    <td><?php echo $rows['JunAug1'];?> <br> <?php echo $rows['JunAug2'];?> </td>
+                    <td><?php echo $rows['SepNov1'];?> <br> <?php echo $rows['SepNov2'];?> </td>
+                    <td><?php echo $rows['descr1'];?> <br> <?php echo $rows['descr2'];?> </td>
+                </tr>
+                <?php }?>
+                </tbody>
+            </table>
+
+                <?php }else{?>
+
+                <?php }?>
+                
+            </section>
+            <br>
+
+
+
+
+
+            <?php
             include 'includes/dbconfiq.php';
-            $query = mysqli_query($con, "SELECT * FROM tbl_tables WHERE sid ='".$_GET['sid']."'");
-            while($rows = mysqli_fetch_array($query)){
-            ?>
-          <tr>
-            <td><?php echo $rows['accom'];?></td>
-            <td><?php echo $rows['mealplan1'];?> <br> <?php echo $rows['mealplan2'];?> </td>
-            <td><?php echo $rows['DecFeb1'];?> <br> <?php echo $rows['DecFeb2'];?> </td>
-            <td><?php echo $rows['MarMay1'];?> <br> <?php echo $rows['MarMay2'];?> </td>
-            <td><?php echo $rows['JunAug1'];?> <br> <?php echo $rows['JunAug2'];?> </td>
-            <td><?php echo $rows['SepNov1'];?> <br> <?php echo $rows['SepNov2'];?> </td>
-            <td><?php echo $rows['descr1'];?> <br> <?php echo $rows['descr2'];?> </td>
-          </tr>
-          <?php }?>
-        </tbody>
-      </table>
+            $query = mysqli_query($con, "SELECT * FROM tbl_gateway WHERE sid ='".$_GET['sid']."'");
+            if(mysqli_num_rows($query) >= 1){?>
 
-        <?php }else{?>
-
-        <?php }?>
-        
-    </section>
-    <br>
-
-    <?php
-        include 'includes/dbconfiq.php';
-        $query = mysqli_query($con, "SELECT * FROM tbl_gateway WHERE sid ='".$_GET['sid']."'");
-        if(mysqli_num_rows($query) >= 1){?>
-
-         <center>
-    <h1 style="color:#800000 ;" class="text-center">Safari Gateways</h1>
-    <div style="height:5px;width:20%; box-shadow: 5px 5px 10px 0px rgba(0,0,0,.2);"></div>
-</center><br><br>
+            <center>
+                <h1 style="color:#800000 ;" class="text-center">Safari Gateways</h1>
+                <div style="height:5px;width:20%; box-shadow: 5px 5px 10px 0px rgba(0,0,0,.2);"></div>
+            </center><br><br>
 
             <div class="flx pa16 container-fluid">
             <div class="flx cmd6 cxs12 pa16">
@@ -1047,7 +1058,7 @@
 
 
 
-<div class="row">
+                <div class="row">
                 <section>
                 <style>
                 td,
@@ -1069,9 +1080,9 @@
                 $query = mysqli_query($con, "SELECT * FROM tbl_prices WHERE sid ='".$_GET['sid']."'");
                 if(mysqli_num_rows($query) >= 1){?>
                 <center>
-    <h1 style="color:#800000 ;" class="text-center">Safari Prices</h1>
-    <div style="height:5px;width:20%; box-shadow: 5px 5px 10px 0px rgba(0,0,0,.2);"></div>
-</center><br><br>
+                    <h1 style="color:#800000 ;" class="text-center">Safari Prices</h1>
+                    <div style="height:5px;width:20%; box-shadow: 5px 5px 10px 0px rgba(0,0,0,.2);"></div>
+                </center><br><br>
                 <table>
                 <thead>
                 <tr style="background-color: #800000; color:white;">
@@ -1096,9 +1107,9 @@
 
 
 
-<center>
-<div class="container"><h1 style="text-decoration:underline;"><a href="#" class="text-danger" data-toggle="modal" data-target="#booktour">&raquo; Plan your safari now!</a></h1></div>
-</center>
+                <center>
+                <div class="container"><h1 style="text-decoration:underline;"><a href="#" class="text-danger" data-toggle="modal" data-target="#booktour">&raquo; Plan your safari now!</a></h1></div>
+                </center>
 
 
   </div>
