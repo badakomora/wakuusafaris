@@ -71,6 +71,39 @@ if(isset($_POST['contact'])){
 
 
 
+if(isset($_POST['carhire'])){
+
+    $email = $_POST['email'];
+    $phone = $_POST['phone'];
+    $hire = $_POST['hire'];
+    $return = $_POST['return'];
+    $reason = $_POST['reason'];
+ 
+
+    $select = mysqli_query($con, "SELECT * FROM tbl_carhire WHERE email = '$email' AND  reason = '$reason' AND phone = '$phone'");
+    if(mysqli_num_rows($select) >= 1){
+    $msg = "An error occurred! You cannot hire a car twice on matters concerning the same inquiry.";
+    echo "<script type='text/javascript'>
+                alert('$msg');
+                window.location = '../';
+            </script>";
+    }else{
+        mysqli_query($con, "INSERT INTO tbl_carhire(email, phone, hire, return_date, reason) VALUES('$email', '$phone', '$hire', '$return', '$reason')");
+       $msg = "Request Sent successful. You will receive an email as response from Wakuu safaris.";
+        echo "<script type='text/javascript'>
+                    alert('$msg');
+                    window.location = '../';
+                </script>";
+    }
+}
+
+
+
+
+
+
+
+
 
 
 

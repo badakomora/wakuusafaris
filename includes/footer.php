@@ -67,13 +67,13 @@
             </a>
             </a>
             <?php }?>
-            <a href="#" class="social-link">
+            <a href="#" class="social-link" data-toggle="modal" data-target="#carhire">
                     <span class="icon">
                     <i class="fa fa-car"></i> 
                     </span>
                     <span>Car hire services</span> 
             </a>
-            <a href="./admin/login.php" class="social-link">
+            <a href="./admin/login.php" target="_blank" class="social-link">
                     <span class="icon">
                     <i class="fa fa-user"></i> 
                     </span>

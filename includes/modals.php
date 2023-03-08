@@ -262,6 +262,92 @@
 
 
 
+
+    <!-- car hire Modal -->
+    <div class="modal fade" id="carhire" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="wrapper p-3">
+                                        <center>
+                                        <div style="background-color:#800000;padding:20px;color:white;border-radius:5px;font-family: 'Aileron';font-style: italic;font-weight:bold;width:96%">
+                                            Wakuu Safari Car Hire Service <br>
+                                            fill in the form below to hire a car with wakuu safari
+                                        </div>
+                                        </center>
+                                        <br>
+                                    <div style="display:flex">
+                                                    <div class="col-lg-6">
+                                                        <img src="https://www.siraamtours.com/wp-content/uploads/2020/02/safari-van.jpg" width="100%" height="100%" alt="">
+                                                    </div>
+                                                    <div class="col-lg-6">
+                                                        <img src="https://twixtlogistics.co.ke/wp-content/uploads/2022/02/Tour-van-for-hire-cost.png" width="100%" height="100%" alt="">
+                                                    </div>
+                                    </div>
+                                    <div style="display:flex">
+                                                    <div class="col-lg-6">
+                                                        <img src="https://seeafricatoday.com/wp-content/uploads/2022/10/Mini-Vans.jpg" width="100%" height="100%"   alt="">
+                                                    </div>
+                                                    <div class="col-lg-6">
+                                                        <img src="https://elitecarrentalkenya.com/wp-content/uploads/2022/03/Nissan-Urvan-safari-van.jpeg" width="100%" height="100%"  alt="">
+                                                    </div>
+                                    </div>
+                                            <br>
+                                        <div class="panel-body">
+                                            <form action="./forms/add.php" method="post">
+                                                <div class="form-group">
+                                                    <label for="" class="">Email Address</label>
+                                                    <input type="email" name="email" class="form-control" placeholder="Enter Your Email Address" />
+                                                    <label for="" class="">Phone N0.</label>
+                                                    <input type="tel" name="phone" class="form-control" placeholder="Enter Your Phone No." />
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="" class="">Date of hire</label>
+                                                    <input type="date" name="hire" class="form-control" placeholder="Enter Your Phone No." />
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="" class="">Date of return</label>
+                                                    <input type="date" name="return" class="form-control" placeholder="Enter Your Phone No." />
+                                                </div>
+                                                <label for="" class="">Reason</label>
+                                                <textarea name="reason" class="form-control">Share with us your thoughts...</textarea>
+                                                <br />
+                                                <button class="btn" type="submit" name="carhire" style="background-color:#800000;width:200px;color:white; font-family: 'Aileron';  font-style: italic;">Submit &raquo;</button>
+                                            </form>
+                                            <br />
+                                            <h4>Car Review</h4>
+                                            <p>The car comes with either 4/5 doors( two front, two/one rear and the tailgate)
+                                                The rear doors are sliding doors, The passenger capacity ranges between 8 to 14 people.
+                                                Caravan has a ground clearance of 6.7 inches, this is good since it is above the 6.5 inches recommended on Kenyan roads
+                                                Higher grades/trims come with alloy rims(instead of steel rims) and fog lights
+                                                One can choose between a high roof van and the normal height ones
+                                                Lastly, there are different colors to pick from
+                                            </p>
+                                            <br>
+                                            <a style="color:black;" href="https://api.whatsapp.com/send?phone=254790005787"> <span><i class="fa fa-whatsapp"></i> +254 790 005787</span></a>
+                                            <br />
+                                            <a style="color:black;" href="tel:+254 790 005787"> <span><i class="fa fa-phone"></i> +254 790 005787</span></a>
+                                            <br />
+                                            <a style="color:black;" href="mailto:wakuusafariskenyabeyond@gmail.com"> <span><i class="fa fa-envelope"></i> wakuusafariskenyabeyond@gmail.com</span></a>
+                                            <br />
+                                            <a style="color:black;" href="#"> <span><i class="fa fa-clock"></i> Working Hours 7:30 AM - 5PM(Mon - Mon). </span></a>
+                                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
     
 
 
