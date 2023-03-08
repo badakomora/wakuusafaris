@@ -283,18 +283,18 @@
                                         <br>
                                     <div style="display:flex">
                                                     <div class="col-lg-6">
-                                                        <img src="https://www.siraamtours.com/wp-content/uploads/2020/02/safari-van.jpg" width="100%" height="100%" alt="">
+                                                        <img src="https://www.siraamtours.com/wp-content/uploads/2020/02/safari-van.jpg" class="featurette-image img-responsive center-block"  width="100%" height="100%" alt="">
                                                     </div>
                                                     <div class="col-lg-6">
-                                                        <img src="https://twixtlogistics.co.ke/wp-content/uploads/2022/02/Tour-van-for-hire-cost.png" width="100%" height="100%" alt="">
+                                                        <img src="https://twixtlogistics.co.ke/wp-content/uploads/2022/02/Tour-van-for-hire-cost.png" class="featurette-image img-responsive center-block"  width="100%" height="100%" alt="">
                                                     </div>
                                     </div>
                                     <div style="display:flex">
                                                     <div class="col-lg-6">
-                                                        <img src="https://seeafricatoday.com/wp-content/uploads/2022/10/Mini-Vans.jpg" width="100%" height="100%"   alt="">
+                                                        <img src="https://seeafricatoday.com/wp-content/uploads/2022/10/Mini-Vans.jpg" class="featurette-image img-responsive center-block"  width="100%" height="100%"   alt="">
                                                     </div>
                                                     <div class="col-lg-6">
-                                                        <img src="https://elitecarrentalkenya.com/wp-content/uploads/2022/03/Nissan-Urvan-safari-van.jpeg" width="100%" height="100%"  alt="">
+                                                        <img src="https://elitecarrentalkenya.com/wp-content/uploads/2022/03/Nissan-Urvan-safari-van.jpeg" class="featurette-image img-responsive center-block"  width="100%" height="100%"  alt="">
                                                     </div>
                                     </div>
                                             <br>
