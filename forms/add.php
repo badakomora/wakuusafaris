@@ -78,6 +78,7 @@ if(isset($_POST['carhire'])){
     $hire = $_POST['hire'];
     $return = $_POST['return'];
     $reason = $_POST['reason'];
+    $status = 'Not discussed';
  
 
     $select = mysqli_query($con, "SELECT * FROM tbl_carhire WHERE email = '$email' AND  reason = '$reason' AND phone = '$phone'");
@@ -88,7 +89,8 @@ if(isset($_POST['carhire'])){
                 window.location = '../';
             </script>";
     }else{
-        mysqli_query($con, "INSERT INTO tbl_carhire(email, phone, hire, return_date, reason) VALUES('$email', '$phone', '$hire', '$return', '$reason')");
+        
+        mysqli_query($con, "INSERT INTO tbl_carhire(email, phone, hire, return_date, reason, status) VALUES('$email', '$phone', '$hire', '$return', '$reason', '$status')");
        $msg = "Request Sent successful. You will receive an email as response from Wakuu safaris.";
         echo "<script type='text/javascript'>
                     alert('$msg');

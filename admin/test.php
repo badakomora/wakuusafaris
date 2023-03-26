@@ -1,3 +1,186 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <?php
 session_start();
 if (!isset($_SESSION['email'])) {
@@ -60,7 +243,7 @@ if (!isset($_SESSION['email'])) {
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="./?p=safari&as=AllSafari">
+                            <a class="nav-link" href="./?p=safari">
                                 <i class="bi bi-minecart-loaded"></i>Bookings
                             </a>
                         </li>
@@ -84,11 +267,6 @@ if (!isset($_SESSION['email'])) {
                                 <i class="bi bi-people"></i> Users
                             </a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="./?p=carhirerequests">
-                                <i class="bi bi-people"></i> Car Hire Requests
-                            </a>
-                        </li>
                     </ul>
                     <!-- Divider -->
                     <hr class="navbar-divider my-5 opacity-20">
@@ -97,14 +275,14 @@ if (!isset($_SESSION['email'])) {
                     <!-- User (md) -->
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                        <li class="nav-item">
+                            <li class="nav-item">
                             <a class="nav-link" href="#" class="dropdown-item" type="button" data-toggle="modal" data-target="#account">
                                 <i class="bi bi-person-square"></i> Account
                             </a>
-                        </li>
-                        <a class="nav-link" href="../includes/logout.php">
-                            <i class="bi bi-box-arrow-left"></i> Logout
-                        </a>
+                            </li>
+                            <a class="nav-link" href="../includes/logout.php">
+                                <i class="bi bi-box-arrow-left"></i> Logout
+                            </a>
                         </li>
                     </ul>
                 </div>
@@ -167,13 +345,13 @@ if (!isset($_SESSION['email'])) {
                         <!-- Nav -->
                         <ul class="nav nav-tabs mt-4 overflow-x border-0">
                             <li class="nav-item ">
-                                <a href="./?p=safari&as=AllSafari" class="nav-link active">All</a>
+                                <a href="./?p=safari" class="nav-link active">All</a>
                             </li>
                             <li class="nav-item">
                                 <a href="./?p=safari&as=scheduledSafari" class="nav-link font-regular">Scheduled</a>
                             </li>
                             <li class="nav-item">
-                                <a href="./?p=safari&as=pendingSafari" class="nav-link font-regular">Postponed</a>
+                                <a href="./?p=safari&as=pendingSafari" class="nav-link font-regular">Pending</a>
                             </li>
                             <li class="nav-item">
                                 <a href="./?p=safari&as=cancelledSafari" class="nav-link font-regular">Canceled</a>
@@ -363,7 +541,7 @@ if (!isset($_SESSION['email'])) {
                                             include '../includes/dbconfiq.php';
                                             $bookings = mysqli_query($con, "SELECT * 
                                             FROM tbl_bookings 
-                                            Where tbl_bookings.package = '" . $_GET['pid'] . "' ORDER BY tbl_bookings.id DESC");
+                                            Where tbl_bookings.package = '" . $_GET['pid'] . "' AND '" . $_GET['p'] . "'  = 'safari' ORDER BY tbl_bookings.id DESC");
                                             while ($bookingsrows = mysqli_fetch_array($bookings)) {
                                         ?>
                                                 <tr>
@@ -383,7 +561,7 @@ if (!isset($_SESSION['email'])) {
                                                             <?php echo $bookingsrows['package']; ?>(<?php echo $bookingsrows['safari']; ?>).
                                                         </a>
                                                     </td>
-
+                                                    
                                                     <td>
                                                         <span class="badge badge-lg badge-dot">
                                                             <?php
@@ -426,94 +604,6 @@ if (!isset($_SESSION['email'])) {
                                                         </script>
                                                     </td>
                                                 </tr>
-
-
-
-
-
-
-
-
-
-                                            <?php } } elseif (isset($_GET['as']) and $_GET['as'] == 'AllSafari') {
-
-
-
-
-
-
-
-
-
-
-
-                                            include '../includes/dbconfiq.php';
-                                            $bookings = mysqli_query($con, "SELECT * 
-                                                FROM tbl_bookings ORDER BY tbl_bookings.id DESC");
-                                            while ($bookingsrows = mysqli_fetch_array($bookings)) {
-                                            ?>
-                                                <tr>
-                                                    <td>
-                                                        <i class="bi bi-envelope"></i>
-                                                        <a class="text-heading font-semibold" href="#">
-                                                            <?php echo $bookingsrows['email']; ?>
-                                                        </a>
-                                                    </td>
-                                                    <td>
-                                                        <i class="bi bi-calendar"></i>
-                                                        <?php echo $bookingsrows['dob']; ?>
-                                                    </td>
-                                                    <td>
-                                                        <i class="bi bi-briefcase"></i>
-                                                        <a class="text-heading font-semibold" href="#">
-                                                            <?php echo $bookingsrows['package']; ?>(<?php echo $bookingsrows['safari']; ?>).
-                                                        </a>
-                                                    </td>
-
-                                                    <td>
-                                                        <span class="badge badge-lg badge-dot">
-                                                            <?php
-                                                            if ($bookingsrows['status'] == 'scheduled') {
-                                                                $color = 'success';
-                                                            } elseif ($bookingsrows['status'] == 'Canceled') {
-                                                                $color = 'danger';
-                                                            } elseif ($bookingsrows['status'] == 'Not discussed') {
-                                                                $color = 'dark';
-                                                            } elseif ($bookingsrows['status'] == 'Payment approved') {
-                                                                $color = 'primary';
-                                                            } else {
-                                                                $color = 'warning';
-                                                            } ?>
-                                                            <i class="bg-<?php echo $color; ?>"></i><?php echo $bookingsrows['status']; ?>
-                                                        </span>
-                                                    </td>
-                                                    <td class="text-end">
-                                                        <?php if ($bookingsrows['status'] == 'Canceled') { ?>
-                                                            <a href="#" style="cursor: no-drop;" class="btn btn-sm btn-neutral text-danger">Cancelled!</a>
-                                                        <?php } else if ($bookingsrows['status'] == 'Payment approved') { ?>
-                                                            <a href="#" style="cursor: no-drop;" class="btn btn-sm btn-neutral text-primary">Payment approved</a>
-                                                        <?php } else if ($bookingsrows['status'] == 'scheduled') { ?>
-                                                            <a href="../forms/update.php?paymentid=<?php echo $bookingsrows['id']; ?>" class="btn btn-sm btn-neutral text-warning">Approve Payment</a>
-                                                        <?php } else { ?>
-                                                            <a href="item.php?p=safari&bid=<?php echo $bookingsrows['id']; ?>" class="btn btn-sm btn-neutral">View</a>
-                                                        <?php } ?>
-                                                        <button type="button" onclick="delete<?php echo $bookingsrows['id']; ?>();" class="btn btn-sm btn-square btn-neutral text-danger-hover">
-                                                            <i class="bi bi-trash"></i>
-                                                        </button>
-                                                        <script>
-                                                            function delete<?php echo $bookingsrows['id']; ?>() {
-                                                                var action = window.confirm("Are you sure you want to delete <?php echo $bookingsrows['email']; ?> safari booking?");
-                                                                if (action) {
-                                                                    document.location.href = '../forms/delete.php?id=safari&bid=<?php echo $bookingsrows['id']; ?>';
-                                                                } else {
-                                                                    document.location.href = './?p=safari';
-                                                                }
-                                                            }
-                                                        </script>
-                                                    </td>
-                                                </tr>
-
-
 
 
 
@@ -558,7 +648,7 @@ if (!isset($_SESSION['email'])) {
                                                             <?php echo $bookingsrows['package']; ?>(<?php echo $bookingsrows['safari']; ?>).
                                                         </a>
                                                     </td>
-
+                                                    
                                                     <td>
                                                         <span class="badge badge-lg badge-dot">
                                                             <i class="bg-warning"></i><?php echo $bookingsrows['status']; ?>
@@ -639,7 +729,7 @@ if (!isset($_SESSION['email'])) {
                                                             <?php echo $bookingsrows['package']; ?>(<?php echo $bookingsrows['safari']; ?>).
                                                         </a>
                                                     </td>
-
+                                                    
                                                     <td>
                                                         <span class="badge badge-lg badge-dot">
                                                             <?php if ($bookingsrows['status'] == 'Payment approved') { ?>
@@ -684,10 +774,10 @@ if (!isset($_SESSION['email'])) {
 
 
 
-                                            <?php }
+                                                <?php }
                                         } elseif (isset($_GET['as']) and $_GET['as'] == 'cancelledSafari') {
 
-
+                                            
 
 
 
@@ -731,7 +821,7 @@ if (!isset($_SESSION['email'])) {
                                                             <?php echo $bookingsrows['package']; ?>(<?php echo $bookingsrows['safari']; ?>).
                                                         </a>
                                                     </td>
-
+                                                    
                                                     <td>
                                                         <span class="badge badge-lg badge-dot">
                                                             <?php
@@ -1025,129 +1115,14 @@ if (!isset($_SESSION['email'])) {
 
 
 
-
-
-
-
-
-
-
-
-
-                        <?php  } elseif (isset($_GET['p']) and $_GET['p'] == 'carhirerequests') { ?>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                            <div class="table-responsive">
-                                <table class="table table-hover table-nowrap">
-                                    <thead class="thead-light">
-                                        <tr>
-                                            <th scope="col">Email</th>
-                                            <th scope="col">Phone</th>
-                                            <th scope="col">Date of Hire</th>
-                                            <th scope="col">Date of Return</th>
-                                            <th scope="col">Reason</th>
-                                            <th scope="col">Status</th>
-                                            <th></th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <?php
-                                        include '../includes/dbconfiq.php';
-                                        $bookings = mysqli_query($con, "SELECT * FROM tbl_carhire ORDER BY id DESC");
-                                        while ($bookingsrows = mysqli_fetch_array($bookings)) {
-                                        ?>
-                                            <tr>
-                                                <td>
-                                                    <i class="bi bi-envelope"></i>
-                                                    <a class="text-heading font-semibold" href="#">
-                                                        <?php echo $bookingsrows['email']; ?>.
-                                                    </a>
-                                                </td>
-                                                <td>
-                                                    <i class="bi bi-phone"></i>
-                                                    <?php echo $bookingsrows['phone']; ?>
-                                                </td>
-                                                <td>
-                                                    <i class="bi bi-calendar"></i>
-                                                    <?php echo $bookingsrows['hire']; ?>
-                                                </td>
-                                                <td>
-                                                    <i class="bi bi-calendar"></i>
-                                                    <?php echo $bookingsrows['return_date']; ?>
-                                                </td>
-                                                <td>
-                                                    <i class="bi bi-lightbulb"></i>
-                                                    <?php echo $bookingsrows['reason']; ?>
-                                                </td>
-                                                <td>
-                                                    <span class="badge badge-lg badge-dot">
-                                                        <?php
-                                                        if ($bookingsrows['status'] == 'Approved') {
-                                                            $color = 'success';
-                                                        } elseif ($bookingsrows['status'] == 'Not discussed') {
-                                                            $color = 'dark';
-                                                        } else {
-                                                            $color = 'danger';
-                                                        } ?>
-                                                        <i class="bg-<?php echo $color; ?>"></i><?php echo $bookingsrows['status']; ?>
-                                                    </span>
-                                                </td>
-                                                <td class="text-end">
-                                                        <?php if ($bookingsrows['status'] == 'Cancelled') { ?>
-                                                            <a href="#" style="cursor: no-drop;" class="btn btn-sm btn-neutral text-danger">Cancelled!</a>
-                                                        <?php } else if ($bookingsrows['status'] == 'Approved') { ?>
-                                                            <a href="#" style="cursor: no-drop;" class="btn btn-sm btn-neutral text-primary">Approved</a>
-                                                       <?php } else { ?>
-                                                            <a href="item.php?p=safari&bid=<?php echo $bookingsrows['id']; ?>" class="btn btn-sm btn-neutral">View</a>
-                                                        <?php } ?>
-                                                        <button type="button" onclick="delete<?php echo $bookingsrows['id']; ?>();" class="btn btn-sm btn-square btn-neutral text-danger-hover">
-                                                            <i class="bi bi-trash"></i>
-                                                        </button>
-                                                        <script>
-                                                            function delete<?php echo $bookingsrows['id']; ?>() {
-                                                                var action = window.confirm("Are you sure you want to delete <?php echo $bookingsrows['email']; ?> safari booking?");
-                                                                if (action) {
-                                                                    document.location.href = '../forms/delete.php?id=safari&bid=<?php echo $bookingsrows['id']; ?>';
-                                                                } else {
-                                                                    document.location.href = './?p=safari';
-                                                                }
-                                                            }
-                                                        </script>
-                                                    </td>
-                                            </tr>
-                                        <?php } ?>
-                                    </tbody>
-                                </table>
-                            </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
                         <?php  } elseif (isset($_GET['p']) and $_GET['p'] == 'gallery') { ?>
 
 
-                            
+
+
+
+
+
 
 
 
