@@ -248,9 +248,6 @@
 
 
 
-<!-- includes -->
-<?php require_once 'includes/modals.php'; ?>
-<?php require_once 'includes/additionals.php'; ?>
 
 
 <style>
@@ -944,8 +941,6 @@
                 padding: 10px;
                 }
 
-                
-
                 table {
                 display: block;
                 max-width: -moz-fit-content;
@@ -962,6 +957,7 @@
                 if(mysqli_num_rows($query) >= 1){?>
 
                 <center>
+                    <hr class="featurette-divider">
                     <h1 style="color:#800000 ;" class="text-center">Safari Budget</h1>
                     <div style="height:5px;width:20%; box-shadow: 5px 5px 10px 0px rgba(0,0,0,.2);"></div>
                 </center><br><br>
@@ -1014,6 +1010,7 @@
             if(mysqli_num_rows($query) >= 1){?>
 
             <center>
+                <hr class="featurette-divider">
                 <h1 style="color:#800000 ;" class="text-center">Safari Gateways</h1>
                 <div style="height:5px;width:20%; box-shadow: 5px 5px 10px 0px rgba(0,0,0,.2);"></div>
             </center><br><br>
@@ -1080,6 +1077,7 @@
                 $query = mysqli_query($con, "SELECT * FROM tbl_prices WHERE sid ='".$_GET['sid']."'");
                 if(mysqli_num_rows($query) >= 1){?>
                 <center>
+                    <hr class="featurette-divider">
                     <h1 style="color:#800000 ;" class="text-center">Safari Prices</h1>
                     <div style="height:5px;width:20%; box-shadow: 5px 5px 10px 0px rgba(0,0,0,.2);"></div>
                 </center><br><br>

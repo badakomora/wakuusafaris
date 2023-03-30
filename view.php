@@ -1,28 +1,5 @@
 <!-- HEADER -->
 <?php require_once 'includes/header.php'; ?>
-
-
-
-<!-- includes -->
-<?php require_once 'includes/modals.php'; ?>
-<?php require_once 'includes/additionals.php'; ?>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <?php if(isset($_GET['v']) AND $_GET['v'] == 'About'){?>
 
 
@@ -151,6 +128,7 @@
                 </div>
             </div>
             </div>
+            <hr class="featurette-divider">
             <section class="third-row">
                 <blockquote cite="#">
                     <p id="quote"> “We pride ourselves for offering the most economical and convenient excursions ranging from luxury to budget safaris.” </p>
@@ -158,7 +136,7 @@
                 <a href="#" target="_blank" id="tribute-link"><u id="tribute-link-dash"> GO, FIND AND EXPLORE.</u></a>
         
             </section>
-            <br><br>
+            <hr class="featurette-divider">
             <center>
             <h1 style=" font-weight: bold;color: #800000;">About our Team</h1>
              <div style="height:5px;width:20%; box-shadow: 5px 5px 10px 0px rgba(0,0,0,.2);"></div>
@@ -242,7 +220,7 @@
 </div>
 
 
-
+<hr class="featurette-divider">
 
 <h1 class="text-center">Wakuu Safaris Gallery</h1><hr>
 <div id="gallery" class="container-fluid">  
@@ -357,6 +335,7 @@
     $blogs = mysqli_query($con, "SELECT * FROM tbl_blogs ORDER BY id DESC");
     while($blogsrows = mysqli_fetch_array($blogs)){
     ?>
+    <hr class="featurette-divider">
      <h1><?php echo $blogsrows['title'];?></h1>
      <div>
        <p class="last_update">posted <?php echo $blogsrows['posted'];?></p>

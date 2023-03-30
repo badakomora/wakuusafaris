@@ -2,6 +2,7 @@
         <div class="sidebar">
         <div class="social daytrip">
         <?php
+            include './includes/dbconfiq.php';
             $query = mysqli_query($con, "SELECT * FROM tbl_safari WHERE safariname ='Day Trips'");
             while($row = mysqli_fetch_array($query)){?>
             <a class="daytriplink" href="safari.php?sid=<?php echo $row['id'];?>&safari=<?php echo $row['safariname']; ?>">

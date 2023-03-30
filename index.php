@@ -55,9 +55,7 @@
 
 
 
-<!-- includes -->
-<?php require_once 'includes/modals.php'; ?>
-<?php require_once 'includes/additionals.php'; ?>
+
 
 
 

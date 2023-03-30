@@ -28,11 +28,47 @@
             z-index:9999;
             background: #fff url("forms/img/loading.gif") center center no-repeat;
         }
+        #body {
+            animation: pageIn ease-in 3s;
+            animation-fill-mode:forwards;
+        }
+        @keyframes pageIn {
+		0% {
+			opacity: 0;
+		}
+
+		35% {
+			opacity: 0;
+		}
+
+		100% {
+			opacity: 1;
+		}
+	}
+
+	@keyframes fadeSpinIn {
+		0% {
+			opacity: 0;
+			transform: translate(0px, -250px) rotate(-30deg);
+		}
+
+		40% {
+			opacity: 1;
+			transform: translate(0px, 0px) rotate(0deg);
+		}
+
+		100% {
+			opacity: 0;
+		}
+	}
     </style>
 </head>
 <body>
 <div id="preload"></div>
-<div id="body">
+<!-- includes -->
+<?php require_once 'includes/modals.php'; ?>
+<?php require_once 'includes/additionals.php'; ?>
+<div id="body" class="fadeSpinIn">
     <!-- header -->
 
     <div class="navbar-wrapper">

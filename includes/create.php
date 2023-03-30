@@ -42,15 +42,15 @@
         <form action="../forms/add.php" method="POST" enctype="multipart/form-data">
           <div class="form-group">
             <label for="" class="">Article Title</label>
-            <input type="text" name="title" class="form-control" placeholder="Title" />
+            <input type="text" name="title" class="form-control" placeholder="Title" maxlength="100" />
             <label for="" class="">Inspiration behind</label>
             <br>
-            <textarea name="inspiration" cols="58" rows="3" maxlength="400" style="border: lavender 1px solid;"></textarea>
+            <textarea name="inspiration" style="width:100%;border:1px solid grey;"  rows="3" maxlength="400" style="border: lavender 1px solid;"></textarea>
           </div>
           <div class="form-group">
             <label for="" class="">Article Content</label>
             <br>
-            <textarea name="body" cols="58" rows="3" maxlength="800" style="border: lavender 1px solid;"></textarea>
+            <textarea name="body"  style="width:100%;border:1px solid grey;" rows="3" maxlength="800" style="border: lavender 1px solid;"></textarea>
           </div>
           <div class="form-group">
             <label for="" class="">Upload photo</label>
